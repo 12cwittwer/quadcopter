@@ -7,7 +7,7 @@ int main() {
   s.vz = 70.0;
 
   std::cout << "Quadcopter sim skeleton running.\n";
-  std::cout << "Initial state: " << s << "\n";
+  std::cout << "Initial state: \n" << s << "\n";
 
   // Later: create Simulator, step(dt), etc.
   return 0;

@@ -4,7 +4,9 @@
 
 // Physical paramters that do not change during flight, but do change from quad
 // to quad
-struct QuadParams {};
+struct QuadParams {
+  double gravity = 9.81; // m/s^2
+};
 
 // Physical state that changes during flight
 struct QuadState {
@@ -32,11 +34,13 @@ struct QuadState {
 class Quad {
 public:
 private:
+  QuadState state;
+  QuadParams params;
 };
 
 // Helpers
 inline std::ostream &operator<<(std::ostream &os, const QuadState &s) {
-  os << "State(z=" << s.z << ", vz=" << s.vz << ", yaw=" << s.psi
-     << ", yaw_rate=" << s.r << ")";
+  os << "Position" << std::endl;
+  os << "\tX: " << s.x << " Y: " << s.y << " Z: " << s.z << std::endl;
   return os;
 }
